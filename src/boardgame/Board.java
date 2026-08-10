@@ -4,13 +4,13 @@ public class Board {
 
 	private int linhas;
 	private int colunas;
-	private Piece [][] pecas;
+	private Piece [][] pieces;
 	
 	public Board(int linhas, int colunas) {
 		super();
 		this.linhas = linhas;
 		this.colunas = colunas;
-		pecas = new Piece[linhas][colunas];
+		pieces = new Piece[linhas][colunas];
 	}
 
 	public int getLinhas() {
@@ -31,11 +31,15 @@ public class Board {
 	
 	public Piece piece(int linha, int coluna) {
 		
-		return pecas[linha][coluna];
+		return pieces[linha][coluna];
 	}
 	public Piece piece(Position position) {
 		
-		return pecas[position.getLinha()][position.getColuna()];
+		return pieces[position.getLinha()][position.getColuna()];
+	}
+	public void placePiece(Piece piece, Position position) {
+		pieces[position.getLinha()][position.getColuna()] = piece;
+		piece.position = position; 
 	}
 	
 }
