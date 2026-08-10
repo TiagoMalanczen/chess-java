@@ -29,7 +29,7 @@ public class Position {
 
 	@Override
 	public String toString() {
-		return "coluna: + " + coluna + " linha: " + linha;
+		return "coluna:" + coluna + " linha: " + linha;
 	}
 	
 	
