@@ -19,7 +19,7 @@ public class Program {
 		while(true) {
 			try {
 			UI.clean();
-			UI.printBoard(match.getPieces() );
+			UI.printMatch(match);
 			
 			System.out.println();
 			
