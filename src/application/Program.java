@@ -1,9 +1,10 @@
 package application;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
-import boardgame.BoardException;
 import chess.ChessException;
 import chess.ChessMatch;
 import chess.ChessPiece;
@@ -15,33 +16,37 @@ public class Program {
 
 		Scanner sc = new Scanner(System.in);
 		ChessMatch match = new ChessMatch();
-		
-		while(true) {
+		List<ChessPiece> captured = new ArrayList<>();
+
+		while (true) {
 			try {
-			UI.clean();
-			UI.printMatch(match);
-			
-			System.out.println();
-			
-			System.out.println("Print source");
-			ChessPostion source = UI.readChessPostion(sc);
-			
-			boolean[][] possivelMoves = match.possivelMoves(source);
-			UI.clean();
-			UI.printBoard(match.getPieces(), possivelMoves);
-					
-			System.out.println();
-			
-			System.out.println("Print target");
-			ChessPostion target = UI.readChessPostion(sc);
-			
-			ChessPiece capturePiece = match.performChessMove(source, target);
-			}
-			catch (ChessException e) {
+				UI.clean();
+				UI.printMatch(match, captured);
+
+				System.out.println();
+
+				System.out.println("Print source");
+				ChessPostion source = UI.readChessPostion(sc);
+
+				boolean[][] possivelMoves = match.possivelMoves(source);
+				UI.clean();
+				UI.printBoard(match.getPieces(), possivelMoves);
+
+				System.out.println();
+
+				System.out.println("Print target");
+				ChessPostion target = UI.readChessPostion(sc);
+
+				ChessPiece capturePiece = match.performChessMove(source, target);
+
+				if (capturePiece != null) {
+					captured.add(capturePiece);
+				}
+
+			} catch (ChessException e) {
 				System.out.println(e.getMessage());
 				sc.nextLine();
-			}
-			catch (InputMismatchException e) {
+			} catch (InputMismatchException e) {
 				System.out.println(e.getMessage());
 				sc.nextLine();
 			}
