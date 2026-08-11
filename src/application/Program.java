@@ -34,11 +34,11 @@ public class Program {
 			ChessPiece capturePiece = match.performChessMove(source, target);
 			}
 			catch (ChessException e) {
-				System.out.println("Error" + e.getMessage());
+				System.out.println(e.getMessage());
 				sc.nextLine();
 			}
 			catch (InputMismatchException e) {
-				System.out.println("Error" + e.getMessage());
+				System.out.println(e.getMessage());
 				sc.nextLine();
 			}
 		}
