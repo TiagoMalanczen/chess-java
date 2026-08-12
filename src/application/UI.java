@@ -10,6 +10,7 @@ import chess.ChessMatch;
 import chess.ChessPiece;
 import chess.ChessPostion;
 import chess.Color;
+import sun.jvm.hotspot.gc.parallel.PSYoungGen;
 
 public class UI {
 	
@@ -59,9 +60,16 @@ public class UI {
 		System.out.println();
 		System.out.println();
 		System.out.println("Turno: " + match.getTurn());
-		System.out.println("Aguardando jogada do jogador " + match.getCurrentPlayer());
-		if(match.getCheck()) {
-			System.out.println("---CHECK!---");
+		if(!match.getCheckMate()) {
+			System.out.println("Aguardando jogada do jogador " + match.getCurrentPlayer());
+			if(match.getCheck()) {
+				System.out.println("---CHECK!---");
+			}
+		}
+		else {
+			System.out.println("---CHECKMATE---");
+			System.out.println("---FIM DE JOGO---");
+			System.out.println("Ganhados: " + match.getCurrentPlayer());
 		}
 	}
 	public static void printBoard(ChessPiece[][] pieces) {
