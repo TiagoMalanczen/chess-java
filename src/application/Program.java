@@ -42,6 +42,12 @@ public class Program {
 				if (capturePiece != null) {
 					captured.add(capturePiece);
 				}
+				
+				if(match.getPromoved() != null) {
+					System.out.println("Digite a peca que deseja promover (B/Q/T/R)");
+					String type = sc.nextLine();
+					match.replacePromoterPiece(type);
+				}
 
 			} catch (ChessException e) {
 				System.out.println(e.getMessage());
