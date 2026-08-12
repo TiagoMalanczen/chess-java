@@ -45,7 +45,11 @@ public class Program {
 				
 				if(match.getPromoved() != null) {
 					System.out.println("Digite a peca que deseja promover (B/Q/T/R)");
-					String type = sc.nextLine();
+					String type = sc.nextLine().toUpperCase();
+					while (!type.equals("B") && !type.equals("N") && !type.equals("R") && !type.equals("Q")) {
+						System.out.println("Valor invalido, digite novamente");
+						type = sc.nextLine().toUpperCase();
+					}
 					match.replacePromoterPiece(type);
 				}
 
