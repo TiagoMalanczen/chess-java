@@ -10,7 +10,6 @@ import chess.ChessMatch;
 import chess.ChessPiece;
 import chess.ChessPostion;
 import chess.Color;
-import sun.jvm.hotspot.gc.parallel.PSYoungGen;
 
 public class UI {
 	
@@ -68,8 +67,8 @@ public class UI {
 		}
 		else {
 			System.out.println("---CHECKMATE---");
+			System.out.println("Ganhador: " + match.getCurrentPlayer());
 			System.out.println("---FIM DE JOGO---");
-			System.out.println("Ganhados: " + match.getCurrentPlayer());
 		}
 	}
 	public static void printBoard(ChessPiece[][] pieces) {
