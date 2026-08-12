@@ -12,7 +12,10 @@ import chess.ChessPostion;
 import chess.Color;
 
 public class UI {
-
+	
+	//chcp.com 65001
+	//♔ ♕ ♖ ♗ ♘ ♙ 
+		
 	// https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println
 
 		public static final String ANSI_RESET = "\u001B[0m";
@@ -57,6 +60,9 @@ public class UI {
 		System.out.println();
 		System.out.println("Turno: " + match.getTurn());
 		System.out.println("Aguardando jogada do jogador " + match.getCurrentPlayer());
+		if(match.getCheck()) {
+			System.out.println("---CHECK!---");
+		}
 	}
 	public static void printBoard(ChessPiece[][] pieces) {
 		for(int i = 0; i < pieces.length; i++) {
