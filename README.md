@@ -31,7 +31,7 @@ A arquitetura do projeto foi estruturada visando o desacoplamento de responsabil
 <h2 align="center">Demonstração em Tempo Real</h2>
 
 <p align="center">
-  <img src="assets/chess-demo.gif" alt="Demonstração do Xadrez no Terminal" width="450px">
+  <img src="imagens/Animação.gif" alt="Demonstração do Xadrez no Terminal" width="450px">
 </p>
 
 <p align="center">
